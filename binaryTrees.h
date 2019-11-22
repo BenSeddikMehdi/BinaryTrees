@@ -43,4 +43,19 @@ void printDataInOrder(binaryNode* node) {
     if (node->right != NULL) printDataInOrder(node->right);
 }
 
+int searchValue(binaryNode* node, int value) {
+    int i = 0;
+    if (value == node->data) {
+        ++i;
+        return i;
+    } else if (value < node->data) {
+        if (node->left == NULL) {
+            return 0;
+        } else {
+
+        }
+
+    }
+}
+
 #endif //BINARYTREES_BINARYTREES_H
