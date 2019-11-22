@@ -51,11 +51,17 @@ int searchValue(binaryNode* node, int value) {
     } else if (value < node->data) {
         if (node->left == NULL) {
             return 0;
-        } else searchValue(node->left, value);
+        } else {
+            ++lineOfNode;
+            searchValue(node->left, value);
+        }
     } else {
         if (node->right == NULL) {
             return 0;
-        } else searchValue(node->right, value);
+        } else {
+            ++lineOfNode;
+            searchValue(node->right, value);
+        }
     }
 }
 
