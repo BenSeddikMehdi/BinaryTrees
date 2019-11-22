@@ -2,16 +2,16 @@
 #include "binaryTrees.h"
 
 int main() {
-    binaryNode* treeLeafs = malloc(sizeof(binaryNode));
-    treeLeafs->data = 0;
-    treeLeafs->left = NULL;
-    treeLeafs->right = NULL;
-    insertNewData(treeLeafs,5);
-    insertNewData(treeLeafs,4);
-    insertNewData(treeLeafs,11);
-    insertNewData(treeLeafs,6);
-    printDataInOrder(treeLeafs);
-    free(treeLeafs);
+    binaryNode* treeBranches = malloc(sizeof(binaryNode));
+    treeBranches->data = 0;
+    treeBranches->left = NULL;
+    treeBranches->right = NULL;
+    insertNewData(treeBranches,5);
+    insertNewData(treeBranches,4);
+    insertNewData(treeBranches,11);
+    insertNewData(treeBranches,6);
+    printDataInOrder(treeBranches);
+    free(treeBranches);
 
     printf("Hello, World!\n");
     return 0;
