@@ -57,7 +57,6 @@ int searchValue(binaryNode* node, int value) {
             return 0;
         } else searchValue(node->right, value);
     }
-    return 0;
 }
 
 #endif //BINARYTREES_BINARYTREES_H
