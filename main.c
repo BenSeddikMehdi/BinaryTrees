@@ -2,6 +2,7 @@
 #include "binaryTrees.h"
 
 int main() {
+    int a = 0;
     binaryNode* treeBranches = malloc(sizeof(binaryNode));
     treeBranches->data = 0;
     treeBranches->left = NULL;
@@ -10,9 +11,9 @@ int main() {
     insertNewData(treeBranches, 4);
     insertNewData(treeBranches, 11);
     insertNewData(treeBranches, 6);
+    a = searchValue(treeBranches, 6);
     printDataInOrder(treeBranches);
     free(treeBranches);
-
-    printf("Hello, World!\n");
+    printf("a = %d\n", a);
     return 0;
 }

@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 
+int lineOfNode = 0;
 typedef struct node {
     int data;
     struct node *left;
@@ -44,10 +45,9 @@ void printDataInOrder(binaryNode* node) {
 }
 
 int searchValue(binaryNode* node, int value) {
-    int i = 0;
     if (value == node->data) {
-        ++i;
-        return i;
+        ++lineOfNode;
+        return lineOfNode;
     } else if (value < node->data) {
         if (node->left == NULL) {
             return 0;
@@ -57,7 +57,7 @@ int searchValue(binaryNode* node, int value) {
             return 0;
         } else searchValue(node->right, value);
     }
-
+    return 0;
 }
 
 #endif //BINARYTREES_BINARYTREES_H
