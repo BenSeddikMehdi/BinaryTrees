@@ -50,6 +50,7 @@ int searchValue(binaryNode* node, int value) {
         return lineOfNode;
     } else if (value < node->data) {
         if (node->left == NULL) {
+            lineOfNode = 0;
             return 0;
         } else {
             ++lineOfNode;
@@ -57,6 +58,7 @@ int searchValue(binaryNode* node, int value) {
         }
     } else {
         if (node->right == NULL) {
+            lineOfNode = 0;
             return 0;
         } else {
             ++lineOfNode;
