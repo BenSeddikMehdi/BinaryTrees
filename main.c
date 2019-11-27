@@ -2,7 +2,6 @@
 #include "binaryTrees.h"
 
 int main() {
-    int a = 0;
     BinaryNode_t* treeBranches = malloc(sizeof(BinaryNode_t));
     BinaryNode_t* temporaryNode = NULL;
     treeBranches->data = 0;
