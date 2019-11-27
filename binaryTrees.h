@@ -82,6 +82,7 @@ void printNode(BinaryNode_t* node) {
 
 BinaryNode_t* returnNode(BinaryNode_t* node, int value) {
     if (value == node->data) {
+        printNode(node);
         return node;
     } else if (value < node->data) {
         if (node->left == NULL) {
@@ -96,6 +97,7 @@ BinaryNode_t* returnNode(BinaryNode_t* node, int value) {
             returnNode(node->right, value);
         }
     }
+    return node;
 }
 
 

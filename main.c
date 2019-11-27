@@ -15,11 +15,11 @@ int main() {
     insertNewData(treeBranches, 12);
     insertNewData(treeBranches, 9);
     //a = searchValue(treeBranches, 7);
-    temporaryNode = returnNode(treeBranches, 11);
+    temporaryNode = returnNode(treeBranches, 6);
     //printNode(temporaryNode);
     printf("\nPrinting Data: \n");
     printDataInOrder(temporaryNode);
-    free(treeBranches);
     printf("find the value of 6 at the line Node %d\n", temporaryNode->data);
+    free(treeBranches);
     return 0;
 }
