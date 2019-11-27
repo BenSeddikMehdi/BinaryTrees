@@ -12,9 +12,10 @@ int main() {
     insertNewData(treeBranches, 4);
     insertNewData(treeBranches, 11);
     insertNewData(treeBranches, 6);
-    insertNewData(treeBranches, 7);
+    insertNewData(treeBranches, 12);
+    insertNewData(treeBranches, 9);
     //a = searchValue(treeBranches, 7);
-    temporaryNode = returnNode(treeBranches, 9);
+    temporaryNode = returnNode(treeBranches, 11);
     //printNode(temporaryNode);
     printf("\nPrinting Data: \n");
     printDataInOrder(temporaryNode);

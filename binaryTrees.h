@@ -82,22 +82,20 @@ void printNode(BinaryNode_t* node) {
 
 BinaryNode_t* returnNode(BinaryNode_t* node, int value) {
     if (value == node->data) {
-        printNode(node);
         return node;
     } else if (value < node->data) {
         if (node->left == NULL) {
-            return NULL;
+            return node->left;
         } else {
             returnNode(node->left, value);
         }
     } else {
         if (node->right == NULL) {
-            return NULL;
+            return node;
         } else {
             returnNode(node->right, value);
         }
     }
-    return node;
 }
 
 
