@@ -20,6 +20,6 @@ int main() {
     printf("\nPrinting Data: \n");
     printDataInOrder(temporaryNode);
     free(treeBranches);
-    printf("find the value of 6 at the line Node %d\n", a);
+    printf("find the value of 6 at the line Node %d\n", temporaryNode->data);
     return 0;
 }
