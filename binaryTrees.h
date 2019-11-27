@@ -68,28 +68,38 @@ int searchValue(BinaryNode_t* node, int value) {
     return lineOfNode;
 }
 
+void printNode(BinaryNode_t* node) {
+    printf("Parent = %d\n", node->data);
+    if (node->left != NULL)
+        printf("Left Child = %d\n", node->left->data);
+    else
+        printf("Left Child = NULL\n");
+    if (node->right != NULL)
+        printf("Right Child = %d\n", node->right->data);
+    else
+        printf("Right Child = NULL\n");
+}
+
 BinaryNode_t* returnNode(BinaryNode_t* node, int value) {
     if (value == node->data) {
-        printDataInOrder(node);
+        printNode(node);
         return node;
     } else if (value < node->data) {
         if (node->left == NULL) {
             return NULL;
         } else {
-            searchValue(node->left, value);
+            returnNode(node->left, value);
         }
     } else {
         if (node->right == NULL) {
             return NULL;
         } else {
-            searchValue(node->right, value);
+            returnNode(node->right, value);
         }
     }
     return node;
 }
 
-void printNode(BinaryNode_t* node) {
 
-}
 
 #endif //BINARYTREES_BINARYTREES_H
