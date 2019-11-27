@@ -70,24 +70,26 @@ int searchValue(BinaryNode_t* node, int value) {
 
 BinaryNode_t* returnNode(BinaryNode_t* node, int value) {
     if (value == node->data) {
+        printDataInOrder(node);
         return node;
     } else if (value < node->data) {
         if (node->left == NULL) {
             return NULL;
         } else {
-            ++lineOfNode;
             searchValue(node->left, value);
         }
     } else {
         if (node->right == NULL) {
-            lineOfNode = 0;
             return NULL;
         } else {
-            ++lineOfNode;
             searchValue(node->right, value);
         }
     }
     return node;
+}
+
+void printNode(BinaryNode_t* node) {
+
 }
 
 #endif //BINARYTREES_BINARYTREES_H
