@@ -8,6 +8,7 @@ int main() {
     treeBranches->left = NULL;
     treeBranches->right = NULL;
     insertNewData(treeBranches, 7);
+    insertNewData(treeBranches, 9);
     //temporaryNode = returnNode(treeBranches, 6);
     printDataInOrder(treeBranches);
 /*
