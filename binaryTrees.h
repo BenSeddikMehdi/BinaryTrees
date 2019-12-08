@@ -97,7 +97,7 @@ BinaryNode_t* returnNode(BinaryNode_t* node, int value) {
             returnNode(node->right, value);
         }
     }
-    return node;
+    return NULL;
 }
 
 

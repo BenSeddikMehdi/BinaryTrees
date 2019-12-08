@@ -7,18 +7,16 @@ int main() {
     treeBranches->data = 0;
     treeBranches->left = NULL;
     treeBranches->right = NULL;
-    insertNewData(treeBranches, 5);
-    insertNewData(treeBranches, 4);
-    insertNewData(treeBranches, 11);
-    insertNewData(treeBranches, 6);
-    insertNewData(treeBranches, 12);
+    insertNewData(treeBranches, 7);
+    //temporaryNode = returnNode(treeBranches, 6);
+    printDataInOrder(treeBranches);
+/*
     insertNewData(treeBranches, 9);
     //a = searchValue(treeBranches, 7);
-    temporaryNode = returnNode(treeBranches, 6);
-    //printNode(temporaryNode);
+
     printf("\nPrinting Data: \n");
     printDataInOrder(temporaryNode);
-    printf("find the value of 6 at the line Node %d\n", temporaryNode->data);
+    printf("find the value of 6 at the line Node %d\n", temporaryNode->data);*/
     free(treeBranches);
     return 0;
 }
