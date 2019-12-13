@@ -22,8 +22,8 @@ int main() {
     node_t* firstNode = NULL;
     do_create_node(create_node, &firstNode, 5);
     do_create_node(create_node, &firstNode, 6);
-    do_create_node(create_node, &firstNode, 7);
+    do_create_node(create_node, &firstNode, 4);
+    do_create_node(create_node, &firstNode, 3);
     printData(firstNode);
-
     return 0;
 }

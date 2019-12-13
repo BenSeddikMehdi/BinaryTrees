@@ -32,7 +32,7 @@ node_t* create_node(node_t** pNode, int16_t value) {
                     (*pNode) = (*pNode)->left;
                 else {
                     (*pNode)->left = new_node((*pNode)->left, value);
-                    return (*pNode)->left;
+                    break;
                 }
 
             }
@@ -41,7 +41,7 @@ node_t* create_node(node_t** pNode, int16_t value) {
                     (*pNode) = (*pNode)->right;
                 else {
                     (*pNode)->right = new_node((*pNode)->right, value);
-                    return (*pNode)->right;
+                    break;
                 }
             }
         }
