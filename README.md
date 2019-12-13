@@ -1,5 +1,5 @@
 # BinaryTrees
-Implementing Binary Trees in C Language
+Implementing Binary Trees in C Language using recursive function
 
 The Output of the "main.c" file:
 4
@@ -8,5 +8,7 @@ The Output of the "main.c" file:
 11
 find the value of 6 at the line Node 3
 
+
+Implementing trees in C Language using Wihle function
 
 ### Author: El Mehdi Benseddik
