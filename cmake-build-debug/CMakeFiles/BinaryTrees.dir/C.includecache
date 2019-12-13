@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-D:/MATLAB_Drive/2019_10_18_Algotihms/BinaryTrees/binaryTrees.h
+D:/MATLAB_Drive/2019_10_18_Algotihms/BinaryTrees/Trees.h
+stdint.h
+-
 stdlib.h
 -
 
 D:/MATLAB_Drive/2019_10_18_Algotihms/BinaryTrees/main.c
 stdio.h
 -
-binaryTrees.h
-D:/MATLAB_Drive/2019_10_18_Algotihms/BinaryTrees/binaryTrees.h
+Trees.h
+D:/MATLAB_Drive/2019_10_18_Algotihms/BinaryTrees/Trees.h
 
