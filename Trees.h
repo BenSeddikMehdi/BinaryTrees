@@ -50,4 +50,13 @@ void printData(node_t* p_node) {
     }
 }
 
+uint32_t findData(node_t* p_node, uint32_t data) {
+    while (p_node != NULL) {
+        if (p_node->data == data)
+            return p_node->data;
+        p_node = p_node->next;
+    }
+    return 0;
+}
+
 #endif //BINARYTREES_TREES_H
