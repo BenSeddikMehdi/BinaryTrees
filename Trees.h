@@ -33,23 +33,24 @@ node_t* new_node(int value) {
 
 void build_tree(node_t** pNode, uint32_t value) {
     node_t* curr = *pNode;
+    begin:
     if (curr != NULL) {
-        while (curr != NULL) {
-            if (value < curr->data) {
-                if (curr->left != NULL) {
-                    curr = curr->left;
-                } else {
-                    curr->left = new_node(value);
-                    return;
-                }
-
+        if (value < curr->data) {
+            if (curr->left != NULL) {
+                curr = curr->left;
+                goto begin;
             } else {
-                if (curr->right != NULL) {
-                    curr = curr->right;
-                } else {
-                    curr->right = new_node(value);
-                    return;
-                }
+                curr->left = new_node(value);
+                return;
+            }
+
+        } else {
+            if (curr->right != NULL) {
+                curr = curr->right;
+                goto begin;
+            } else {
+                curr->right = new_node(value);
+                return;
             }
         }
     } else

@@ -6,7 +6,7 @@
 int main() {
     node_t* firstNode = NULL;
     for (int i = 0; i < N; ++i) {
-        do_build_tree(build_tree, &firstNode, N-i);
+        build_tree(&firstNode, N-i);
     }
     uint32_t d = findData(firstNode, 1);
     printf("data found = %d", d);
