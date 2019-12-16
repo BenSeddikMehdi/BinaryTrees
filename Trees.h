@@ -44,7 +44,7 @@ void create_node(node_t** pNode, uint32_t value) {
 void printData(node_t* p_node) {
     uint32_t i = 0;
     while (p_node != NULL) {
-        printf("data %d = %d\n", i, p_node->data);
+        printf("data:= %d\n", p_node->data);
         p_node = p_node->next;
         i++;
     }
