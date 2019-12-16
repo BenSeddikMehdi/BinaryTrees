@@ -37,7 +37,6 @@ void build_tree(node_t** pNode, uint32_t value) {
         while (curr != NULL) {
             if (value < curr->data) {
                 if (curr->left != NULL) {
-                    /*prev = curr;*/
                     curr = curr->left;
                 } else {
                     curr->left = new_node(value);
@@ -46,7 +45,6 @@ void build_tree(node_t** pNode, uint32_t value) {
 
             } else {
                 if (curr->right != NULL) {
-                    /*prev = curr;*/
                     curr = curr->right;
                 } else {
                     curr->right = new_node(value);
