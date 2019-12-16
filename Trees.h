@@ -32,7 +32,7 @@ node_t* new_node(int value) {
 }
 
 void build_tree(node_t** pNode, uint32_t value) {
-    node_t *prev = NULL, *curr = *pNode;
+    node_t* curr = *pNode;
     if (curr != NULL) {
         while (curr != NULL) {
             if (value < curr->data) {
@@ -66,13 +66,26 @@ void printData(node_t* p_node) {
     }
 }
 
-/*uint32_t findData(node_t* p_node, uint32_t data) {
-    while (p_node != NULL) {
-        if (p_node->data == data)
-            return p_node->data;
-        p_node = p_node->next;
+uint32_t findData(node_t* p_node, uint32_t data) {
+    begin:
+    if (p_node != NULL) {
+        if (p_node->data == data) return p_node->data;
+        else if (data < p_node->data) {
+            if (p_node->left != NULL) {
+                p_node = p_node->left;
+                goto begin;
+            }
+            else return 0;
+        }
+        else {
+            if (p_node->right != NULL) {
+                p_node = p_node->right;
+                goto begin;
+            }
+            else return 0;
+        }
     }
     return 0;
-}*/
+}
 
 #endif //BINARYTREES_TREES_H
