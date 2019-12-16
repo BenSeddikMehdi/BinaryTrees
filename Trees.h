@@ -9,53 +9,45 @@
 #define BINARYTREES_TREES_H
 
 typedef struct p_node {
-    int16_t data;
-    struct p_node* left;
-    struct p_node* right;
+    uint32_t data;
+    struct p_node* next;
 } node_t;
 
-node_t* do_create_node(node_t* (*op) (node_t**, int16_t), node_t** pNode, int16_t value) {
-    return op(pNode, value);
+void do_create_node(void (*op) (node_t**, uint32_t),
+                        node_t** pNode, uint32_t value) {
+    op(pNode, value);
 }
-node_t* new_node(node_t* node, int value) {
-    node = malloc(sizeof(node_t));
+
+node_t* new_node(int value) {
+    node_t* node = malloc(sizeof(node_t)); 
+    if (node == NULL) {
+        printf("Memory not Allocated !\n");
+        return NULL;
+    }
     node->data = value;
-    node->left = NULL;
-    node->right = NULL;
+    node->next = NULL;
     return node;
 }
-node_t* create_node(node_t** pNode, int16_t value) {
-    if ((*pNode) != NULL) {
-        while ((*pNode) != NULL) {
-            if (value < (*pNode)->data) {
-                if ((*pNode)->left != NULL)
-                    (*pNode) = (*pNode)->left;
-                else {
-                    (*pNode)->left = new_node((*pNode)->left, value);
-                    break;
-                }
 
-            }
-            else {
-                if ((*pNode)->right != NULL)
-                    (*pNode) = (*pNode)->right;
-                else {
-                    (*pNode)->right = new_node((*pNode)->right, value);
-                    break;
-                }
-            }
+void create_node(node_t** pNode, uint32_t value) {
+    node_t* prev = NULL, *curr = *pNode;
+    if (curr != NULL) {
+        while (curr != NULL) {
+            prev = curr;
+            curr = curr->next;
         }
+        prev->next = new_node(value);
     } else
-        (*pNode) = new_node((*pNode), value);
-    return (*pNode);
+        (*pNode) = new_node(value);
 }
+
 void printData(node_t* p_node) {
-    if (p_node == NULL) return;
-    if (p_node->left != NULL) printData(p_node->left);
-    printf("%d\n", p_node->data);
-    if (p_node->right != NULL) printData(p_node->right);
+    uint32_t i = 0;
+    while (p_node != NULL) {
+        printf("data %d = %d\n", i, p_node->data);
+        p_node = p_node->next;
+        i++;
+    }
 }
-
-
 
 #endif //BINARYTREES_TREES_H
