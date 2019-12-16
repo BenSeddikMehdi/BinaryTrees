@@ -10,53 +10,71 @@
 
 typedef struct p_node {
     uint32_t data;
-    struct p_node* next;
+    struct p_node* left;
+    struct p_node* right;
 } node_t;
 
-void do_create_node(void (*op) (node_t**, uint32_t),
+void do_build_tree(void (*op) (node_t**, uint32_t),
                         node_t** pNode, uint32_t value) {
     op(pNode, value);
 }
 
 node_t* new_node(int value) {
-    node_t* node = malloc(sizeof(node_t)); 
+    node_t* node = malloc(sizeof(node_t));
     if (node == NULL) {
         printf("Memory not Allocated !\n");
         return NULL;
     }
     node->data = value;
-    node->next = NULL;
+    node->right = NULL;
+    node->left = NULL;
     return node;
 }
 
-void create_node(node_t** pNode, uint32_t value) {
-    node_t* prev = NULL, *curr = *pNode;
+void build_tree(node_t** pNode, uint32_t value) {
+    node_t *prev = NULL, *curr = *pNode;
     if (curr != NULL) {
         while (curr != NULL) {
-            prev = curr;
-            curr = curr->next;
+            if (value < curr->data) {
+                if (curr->left != NULL) {
+                    /*prev = curr;*/
+                    curr = curr->left;
+                } else {
+                    curr->left = new_node(value);
+                    return;
+                }
+
+            } else {
+                if (curr->right != NULL) {
+                    /*prev = curr;*/
+                    curr = curr->right;
+                } else {
+                    curr->right = new_node(value);
+                    return;
+                }
+            }
         }
-        prev->next = new_node(value);
     } else
         (*pNode) = new_node(value);
 }
 
 void printData(node_t* p_node) {
-    uint32_t i = 0;
-    while (p_node != NULL) {
+    if (p_node != NULL) {
+        if (p_node->left != NULL)
+            printData(p_node->left);
         printf("data:= %d\n", p_node->data);
-        p_node = p_node->next;
-        i++;
+        if (p_node->right != NULL)
+            printData(p_node->right);
     }
 }
 
-uint32_t findData(node_t* p_node, uint32_t data) {
+/*uint32_t findData(node_t* p_node, uint32_t data) {
     while (p_node != NULL) {
         if (p_node->data == data)
             return p_node->data;
         p_node = p_node->next;
     }
     return 0;
-}
+}*/
 
 #endif //BINARYTREES_TREES_H
