@@ -3,6 +3,8 @@
 #include "Trees.h"
 
 #define N 100000
+
+
 int main() {
     node_t* firstNode = NULL;
     for (int i = 0; i < N; ++i) {
