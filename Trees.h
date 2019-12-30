@@ -43,7 +43,6 @@ void build_tree(node_t** pNode, uint32_t value) {
                 curr->left = new_node(value);
                 return;
             }
-
         } else {
             if (curr->right != NULL) {
                 curr = curr->right;

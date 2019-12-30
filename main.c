@@ -2,7 +2,7 @@
 #include <time.h>
 #include "Trees.h"
 
-#define N 100000
+#define N 10
 
 
 int main() {
