@@ -75,14 +75,14 @@ uint32_t findData(node_t* p_node, uint32_t data) {
                 p_node = p_node->left;
                 goto begin;
             }
-            else return 0;
+            else return -1;
         }
         else {
             if (p_node->right != NULL) {
                 p_node = p_node->right;
                 goto begin;
             }
-            else return 0;
+            else return -1;
         }
     }
     // data not found
