@@ -85,7 +85,8 @@ uint32_t findData(node_t* p_node, uint32_t data) {
             else return 0;
         }
     }
-    return 0;
+    // data not found
+    return -1;
 }
 
 #endif //BINARYTREES_TREES_H
